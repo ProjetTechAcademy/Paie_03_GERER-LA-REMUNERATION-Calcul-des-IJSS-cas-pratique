@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>03_GÉRER LES HS & DIMANCHE / règles 2025 / cas pratique</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body{font-family:'Inter',sans-serif;background:#F8F7F4;color:#3D405B}
+    .nav-link{transition:all .3s;border-bottom:2px solid transparent}
+    .nav-link:hover,.nav-link.active{color:#81B29A;border-bottom-color:#81B29A}
+    .card{background:#fff;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);transition:transform .3s, box-shadow .3s}
+    .card:hover{transform:translateY(-5px);box-shadow:0 10px 15px rgba(0,0,0,.07)}
+    input,select{border-color:#E0E0E0}
+    input:focus,select:focus{border-color:#81B29A;box-shadow:0 0 0 2px rgba(129,178,154,.3);outline:none}
+    .table-header{background:#F3F4F6}
+  </style>
+</head>
+<body class="antialiased">
+  <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <span class="font-bold text-lg text-gray-800">03_GÉRER LES HEURES SUP & DIMANCHE</span>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="#processus" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Processus</a>
+            <a href="#regles" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Règles 2025</a>
+            <a href="#simulateur" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Simulateur</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+    <div class="text-center mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">Heures supplémentaires & travail du dimanche</h1>
+      <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Un parcours pédagogique + un calculateur interactif, calés sur l’actualité réglementaire 2025 (France) : décompte hebdo, majorations, exonérations salariales (11,31 %), déduction patronale, non-imposition jusqu’à 7 500 € et règles « dimanche » par convention.</p>
+    </div>
+
+    <!-- 1. Processus -->
+    <section id="processus" class="mb-16 scroll-mt-20">
+      <div class="card p-6 md:p-8">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">🔁 Le Processus de décompte</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          <div class="p-4 bg-blue-100 rounded-lg border border-blue-200">
+            <p class="font-bold text-blue-800 text-5xl">1</p>
+            <h3 class="font-semibold text-blue-800 mt-2">Semaine civile</h3>
+            <p class="text-sm text-blue-700 mt-2">Les HS se décomptent par semaine (lun 0h → dim 24h, sauf accord). Le constat se fait <strong>à la fin</strong> de la semaine, y compris si elle chevauche 2 mois.</p>
+          </div>
+          <div class="p-4 bg-yellow-100 rounded-lg border border-yellow-200">
+            <p class="font-bold text-yellow-800 text-5xl">2</p>
+            <h3 class="font-semibold text-yellow-800 mt-2">Taux de majoration</h3>
+            <p class="text-sm text-yellow-700 mt-2">Par défaut : +25 % de la 36e à la 43e heure (8 HS), puis +50 % au-delà. Un accord/CCN peut prévoir d’autres taux.</p>
+          </div>
+          <div class="p-4 bg-green-100 rounded-lg border border-green-200">
+            <p class="font-bold text-green-800 text-5xl">3</p>
+            <h3 class="font-semibold text-green-800 mt-2">Dimanche</h3>
+            <p class="text-sm text-green-700 mt-2">Pas de prime légale systématique : tout dépend de la CCN / accord / usage. Certaines prévoient +100 % et repos compensateur.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Règles 2025 -->
+    <section id="regles" class="mb-16 scroll-mt-20">
+      <div class="card p-6 md:p-8">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">📜 Règles sociales & fiscales 2025 (synthèse)</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="p-4 rounded-lg border bg-white">
+            <h3 class="font-semibold">Exonération salariale (HS/HC)</h3>
+            <ul class="list-disc list-inside text-sm text-gray-700 mt-2">
+              <li>Réduction de cotisations salariales sur HS/HC dans la limite de <strong>11,31 %</strong>.</li>
+              <li>Applicable sur la rémunération + majorations (dans la limite des taux légaux ou conventionnels).</li>
+            </ul>
+          </div>
+          <div class="p-4 rounded-lg border bg-white">
+            <h3 class="font-semibold">Déduction patronale (HS)</h3>
+            <ul class="list-disc list-inside text-sm text-gray-700 mt-2">
+              <li><strong>&lt; 20</strong> salariés : <strong>1,50 €</strong> par HS.</li>
+              <li><strong>20 à 249</strong> salariés : <strong>0,50 €</strong> par HS.</li>
+            </ul>
+          </div>
+          <div class="p-4 rounded-lg border bg-white">
+            <h3 class="font-semibold">Impôt sur le revenu</h3>
+            <ul class="list-disc list-inside text-sm text-gray-700 mt-2">
+              <li>HS exonérées d’IR <strong>jusqu’à 7 500 € nets</strong>/an (déclarées quand même).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div>
+            <h4 class="font-semibold text-lg">Quelles primes compter pour majorer les HS ?</h4>
+            <p class="text-sm text-gray-700 mt-2">Inclure les éléments liés à l’exécution/conditions du travail (ex : prime de rendement individuel/collectif contributive, prime de dimanche/jours fériés, nuit, insalubrité…). Exclure les éléments déconnectés (13e mois, fin d’année, transport/panier remboursements, évènements familiaux…).</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg">Travail du dimanche : points de vigilance</h4>
+            <p class="text-sm text-gray-700 mt-2">Dérogations sectorielles/géographiques, volontariat selon cas, repos compensateur éventuel, non-cumul ou cumul des majorations (HS × Dimanche) selon CCN/jurisprudence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Simulateur -->
+    <section id="simulateur" class="mb-16 scroll-mt-20">
+      <div class="card p-6 md:p-8">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">🖥️ Simulateur Heures Sup & Dimanche (2025)</h2>
+
+        <!-- 3.1 Paramètres entreprise & salarié -->
+        <div class="bg-gray-50 p-6 rounded-lg border mb-8">
+          <h3 class="text-xl font-semibold mb-4 text-gray-700">1. Paramètres</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Effectif entreprise</label>
+              <select id="effectif" class="mt-1 block w-full rounded-md p-2">
+                <option value="-20">&lt; 20</option>
+                <option value="20-249">20 à 249</option>
+                <option value=">=250">≥ 250 (pas de déduction patronale)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Salaire de base mensuel (€)</label>
+              <input id="salaireBase" type="number" step="0.01" value="2500" class="mt-1 block w-full rounded-md p-2">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Heures de base mensuelles</label>
+              <input id="heuresBaseMensuelles" type="number" value="151.67" class="mt-1 block w-full rounded-md p-2">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Primes à inclure base HS (€)</label>
+              <input id="primesIncluses" type="number" step="0.01" value="0" class="mt-1 block w-full rounded-md p-2">
+            </div>
+            <div class="lg:col-span-2">
+              <label class="block text-sm font-medium text-gray-700">Règle dimanche (CCN)</label>
+              <select id="regleDimanche" class="mt-1 block w-full rounded-md p-2">
+                <option value="aucune">Générique (pas de prime légale)</option>
+                <option value="+100">CCN avec majoration 100 % (ex : Négoce Ameublement)</option>
+                <option value="syntec100">SYNTEC : +100 % (travail exceptionnel du dimanche) + HS éventuellement cumulables</option>
+                <option value="noncumul90">CCN non-cumul (appliquer la majoration la plus favorable)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Cumul HS × Dimanche</label>
+              <select id="cumul" class="mt-1 block w-full rounded-md p-2">
+                <option value="non">Non (prendre la majoration la plus favorable)</option>
+                <option value="oui">Oui (additionner)</option>
+              </select>
+            </div>
+            <div class="flex items-end">
+              <label class="flex items-center text-sm">
+                <input id="reposComp" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600"> 
+                <span class="ml-2">Repos comp. dimanche (si CCN le prévoit)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3.2 Saisie hebdomadaire -->
+        <div class="bg-gray-50 p-6 rounded-lg border mb-8">
+          <h3 class="text-xl font-semibold mb-4 text-gray-700">2. Heures réalisées (4 semaines type)</h3>
+          <div id="semaines" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+          <p class="text-xs text-gray-500 mt-4">💡 Les HS se décomptent <strong>par semaine</strong>. Le simulateur applique +25 % jusqu’à 8 HS (36e→43e h) puis +50 % au-delà, sauf si vos règles/CCN diffèrent.</p>
+        </div>
+
+        <!-- 3.3 Résultats -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-gray-700">3. Résultats & bulletin simplifié</h3>
+          <div id="resultats" class="space-y-6"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const inputs = {
+      effectif: document.getElementById('effectif'),
+      salaireBase: document.getElementById('salaireBase'),
+      heuresBaseMensuelles: document.getElementById('heuresBaseMensuelles'),
+      primesIncluses: document.getElementById('primesIncluses'),
+      regleDimanche: document.getElementById('regleDimanche'),
+      cumul: document.getElementById('cumul'),
+      reposComp: document.getElementById('reposComp')
+    };
+
+    // Constantes 2025 vérifiées (SMIC utile pour repères uniquement)
+    const SMIC_HORAIRE_2025 = 11.88; // Insee 2025
+    const REDUCTION_SALARIALE_MAX = 0.1131; // plafond 11,31%
+    const DEDUC_PATRONALE_LT20 = 1.50; // €/HS
+    const DEDUC_PATRONALE_20_249 = 0.50; // €/HS
+
+    // Construction des 4 semaines de saisie
+    const semainesDiv = document.getElementById('semaines');
+    const semaines = [];
+    for (let s = 1; s <= 4; s++) {
+      const wrap = document.createElement('div');
+      wrap.className = 'card p-4';
+      wrap.innerHTML = `
+        <h4 class="font-semibold text-gray-800 mb-3">Semaine ${s}</h4>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Heures totales réalisées</label>
+            <input data-k="heures" type="number" step="0.01" value="35" class="mt-1 block w-full rounded-md p-2">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Dont le dimanche</label>
+            <input data-k="dimanche" type="number" step="0.01" value="0" class="mt-1 block w-full rounded-md p-2">
+          </div>
+        </div>`;
+      semainesDiv.appendChild(wrap);
+      const heures = wrap.querySelector('input[data-k="heures"]');
+      const dimanche = wrap.querySelector('input[data-k="dimanche"]');
+      semaines.push({ heures, dimanche });
+    }
+
+    const resultatsDiv = document.getElementById('resultats');
+
+    // Listeners
+    Object.values(inputs).forEach(el => el.addEventListener('input', recalc));
+    semaines.forEach(s => {
+      s.heures.addEventListener('input', recalc);
+      s.dimanche.addEventListener('input', recalc);
+    });
+
+    function arr2(n){return Math.round(n*100)/100}
+
+    function recalc(){
+      const salaireBase = parseFloat(inputs.salaireBase.value||0);
+      const heuresBaseMensuelles = parseFloat(inputs.heuresBaseMensuelles.value||151.67);
+      const primes = parseFloat(inputs.primesIncluses.value||0);
+      const tauxHoraireBase = (salaireBase + primes) / heuresBaseMensuelles;
+
+      const effectifVal = inputs.effectif.value;
+      const regleDim = inputs.regleDimanche.value;
+      const cumul = inputs.cumul.value === 'oui';
+
+      // Déduction patronale par HS selon effectif
+      const deducPatronaleParHS = effectifVal === '-20' ? DEDUC_PATRONALE_LT20 : (effectifVal === '20-249' ? DEDUC_PATRONALE_20_249 : 0);
+
+      // Boucle semaines => calc HS par semaine
+      let totalHS25 = 0, totalHS50 = 0, totalDimHeures = 0;
+      let remunerationDimanche = 0; // hors HS, prime dimanche/CCN
+
+      semaines.forEach(({heures, dimanche}) => {
+        const h = parseFloat(heures.value||0);
+        const d = parseFloat(dimanche.value||0);
+        const hebdoBase = 35; // supposé; adapter si accord différent
+        const hsSemaine = Math.max(0, h - hebdoBase);
+        const hs25 = Math.min(8, hsSemaine);
+        const hs50 = Math.max(0, hsSemaine - 8);
+        totalHS25 += hs25; totalHS50 += hs50; totalDimHeures += d;
+
+        // Règle dimanche (hors HS) => si cumul=false on prendra le mieux plus loin
+        let primeDimanche = 0;
+        if (regleDim === '+100' || regleDim === 'syntec100') {
+          primeDimanche = d * tauxHoraireBase; // +100% => doublement => prime = base en plus
+        } else if (regleDim === 'aucune' || regleDim === 'noncumul90') {
+          primeDimanche = 0; // générique
+        }
+        remunerationDimanche += primeDimanche;
+      });
+
+      // Heures sup rémunération et majorations
+      const baseHS = tauxHoraireBase; // inclus primes sélectionnées
+      const remunHS25 = totalHS25 * baseHS * 1.25;
+      const remunHS50 = totalHS50 * baseHS * 1.50;
+      const majHS = (totalHS25 * baseHS * 0.25) + (totalHS50 * baseHS * 0.50);
+      const remunHSBrut = remunHS25 + remunHS50; // base+majorations
+
+      // Dimanche vs HS : gestion du cumul
+      // Si pas de cumul et CCN prévoit majoration dimanche, on compare pour les heures faites un dimanche ET heures sup
+      // Approche simple : appliquer non-cumul en remplaçant, pour min(totalDimHeures, totalHS), la majoration HS par la majoration dimanche si elle est supérieure.
+      let ajustementNonCumul = 0;
+      if (!cumul && (inputs.regleDimanche.value === '+100' || inputs.regleDimanche.value === 'noncumul90')) {
+        const totalHS = totalHS25 + totalHS50;
+        const chevauchement = Math.min(totalDimHeures, totalHS);
+        const majorationDim = baseHS; // +100% => prime = 100% du taux (en plus du salaire de base)
+        // Majorations HS moyennes pondérées sur chevauchement : approx en prenant 25% sur les 8 premières puis 50%
+        const majChev25 = Math.min(chevauchement, totalHS25) * baseHS * 0.25;
+        const majChev50 = Math.max(0, chevauchement - totalHS25) * baseHS * 0.50;
+        const majHSsurChev = majChev25 + majChev50;
+        // Si la majoration dimanche est plus favorable, on remplace la majoration HS par celle de dimanche sur les heures qui se chevauchent
+        ajustementNonCumul = Math.max(0, (chevauchement * majorationDim) - majHSsurChev);
+      }
+
+      // Rémunération brute
+      const salaireBrutBase = salaireBase;
+      const brutHS = remunHSBrut; // comprend base des HS
+      const brutDimanche = remunerationDimanche; // prime dim. hors HS (ou ajustée via non-cumul)
+      const brutTotal = salaireBrutBase + brutHS + brutDimanche + ajustementNonCumul;
+
+      // Réduction salariale HS (11,31% max) – n’agit que sur la partie HS/HC (rémunération et majoration dans la limite)
+      const assietteRedSalHS = remunHSBrut + (cumul ? remunerationDimanche : (remunerationDimanche + ajustementNonCumul));
+      const reducSalariale = assietteRedSalHS * REDUCTION_SALARIALE_MAX;
+
+      // Déduction forfaitaire patronale
+      const nbHS = totalHS25 + totalHS50;
+      const deducPatronale = nbHS * deducPatronaleParHS;
+
+      // Net (approche pédagogique) : on applique 22% de charges salariales sur le brut, puis on retranche la réduction salariale calculée
+      const netAvantHS = salaireBrutBase * 0.78; // approx 22%
+      const netHS = (brutHS + brutDimanche + ajustementNonCumul) * 0.78;
+      const netApresReduc = netAvantHS + netHS + reducSalariale; // la réduction augmente le net
+
+      // Sortie
+      resultatsDiv.innerHTML = '';
+
+      const blocSynthese = `
+        <div class="p-4 rounded-lg border bg-gray-100">
+          <h4 class="font-bold text-lg text-indigo-700 mb-4">Synthèse mois (pédagogique)</h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <table class="min-w-full bg-white border text-sm">
+                <tbody>
+                  <tr class="border-b"><td class="py-1 px-2">Taux horaire de base (avec primes incluses)</td><td class="text-right py-1 px-2">${arr2(baseHS).toFixed(2)} €</td></tr>
+                  <tr class="border-b"><td class="py-1 px-2">HS à 25 %</td><td class="text-right py-1 px-2">${totalHS25} h</td></tr>
+                  <tr class="border-b"><td class="py-1 px-2">HS à 50 %</td><td class="text-right py-1 px-2">${totalHS50} h</td></tr>
+                  <tr class="border-b"><td class="py-1 px-2">Heures travaillées le dimanche</td><td class="text-right py-1 px-2">${arr2(totalDimHeures)} h</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <table class="min-w-full bg-white border text-sm">
+                <tbody>
+                  <tr class="border-b"><td class="py-1 px-2">Rémunération HS (base + maj.)</td><td class="text-right py-1 px-2">${arr2(brutHS).toFixed(2)} €</td></tr>
+                  <tr class="border-b"><td class="py-1 px-2">Prime dimanche</td><td class="text-right py-1 px-2">${arr2(brutDimanche).toFixed(2)} €</td></tr>
+                  ${!cumul && (inputs.regleDimanche.value === '+100' || inputs.regleDimanche.value === 'noncumul90') ? `<tr class="border-b"><td class="py-1 px-2">Ajustement non-cumul (plus favorable)</td><td class="text-right py-1 px-2">${arr2(ajustementNonCumul).toFixed(2)} €</td></tr>`:''}
+                  <tr class="border-b font-semibold"><td class="py-1 px-2">Brut total</td><td class="text-right py-1 px-2">${arr2(brutTotal).toFixed(2)} €</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>`;
+
+      const blocBulletin = `
+        <div class="p-4 rounded-lg border bg-white">
+          <h5 class="font-semibold text-gray-800 mb-2">🧾 Bulletin simplifié</h5>
+          <table class="min-w-full bg-white border text-sm">
+            <tbody>
+              <tr class="border-b"><td class="py-1 px-2">Salaire de base</td><td class="text-right py-1 px-2">${arr2(salaireBrutBase).toFixed(2)} €</td></tr>
+              <tr class="border-b"><td class="py-1 px-2">Heures sup 25 %</td><td class="text-right py-1 px-2">${arr2(totalHS25*baseHS*1.25).toFixed(2)} €</td></tr>
+              <tr class="border-b"><td class="py-1 px-2">Heures sup 50 %</td><td class="text-right py-1 px-2">${arr2(totalHS50*baseHS*1.50).toFixed(2)} €</td></tr>
+              <tr class="border-b"><td class="py-1 px-2">Prime dimanche</td><td class="text-right py-1 px-2">${arr2(brutDimanche).toFixed(2)} €</td></tr>
+              ${!cumul && (inputs.regleDimanche.value === '+100' || inputs.regleDimanche.value === 'noncumul90') ? `<tr class="border-b"><td class="py-1 px-2">Ajustement non-cumul</td><td class="text-right py-1 px-2">${arr2(ajustementNonCumul).toFixed(2)} €</td></tr>`:''}
+              <tr class="bg-gray-200 font-bold"><td class="py-1 px-2">Brut soumis</td><td class="text-right py-1 px-2">${arr2(brutTotal).toFixed(2)} €</td></tr>
+              <tr><td class="py-1 px-2 text-xs italic text-gray-500" colspan="2">… Cotisations salariales (≈22 %) …</td></tr>
+              <tr class="border-t"><td class="py-1 px-2">Réduction salariale HS (max 11,31 %)</td><td class="text-right py-1 px-2">+${arr2(reducSalariale).toFixed(2)} €</td></tr>
+              <tr class="border-t font-medium"><td class="py-1 px-2">Net à payer (approx.)</td><td class="text-right py-1 px-2">${arr2(netApresReduc).toFixed(2)} €</td></tr>
+            </tbody>
+          </table>
+        </div>`;
+
+      const blocCotisations = `
+        <div class="p-4 rounded-lg border bg-blue-50 border-blue-200">
+          <h5 class="font-semibold text-blue-800 mb-2">💼 Côté employeur</h5>
+          <p class="text-sm text-blue-900">Déduction forfaitaire patronale estimée : <strong>${nbHS}</strong> HS × ${deducPatronaleParHS.toFixed(2)} € = <strong>${arr2(deducPatronale).toFixed(2)} €</strong>.</p>
+          ${inputs.reposComp.checked ? '<p class="text-xs text-blue-900 mt-1">Repos compensateur dimanche : à organiser selon la CCN/accord (affichage non chiffré).</p>' : ''}
+        </div>`;
+
+      resultatsDiv.innerHTML = blocSynthese + blocBulletin + blocCotisations;
+    }
+
+    recalc();
+  });
+  </script>
+</body>
+</html>
