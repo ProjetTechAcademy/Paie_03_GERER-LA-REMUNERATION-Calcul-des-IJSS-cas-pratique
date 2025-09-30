@@ -103,11 +103,38 @@
             <h4 class="font-semibold text-lg">Travail du dimanche : points de vigilance</h4>
             <p class="text-sm text-gray-700 mt-2">Dérogations sectorielles/géographiques, volontariat selon cas, repos compensateur éventuel, non-cumul ou cumul des majorations (HS × Dimanche) selon CCN/jurisprudence.</p>
           </div>
-        </div>
-      </div>
-    </section>
+        </div></div></section>
 
-    <!-- 3. Simulateur -->
+<!-- 2.b Détail des éléments inclus/exclus dans la base HS (pédagogique) -->
+<section id="base-hs-detail" class="mb-16 scroll-mt-20">
+  <div class="card p-6 md:p-8">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">🧩 Ce qui <span class="underline">rentre</span> (ou pas) dans la base de calcul des HS</h2>
+    <p class="text-sm text-gray-600 mb-4">Synthèse issue de ta documentation (inclure/exclure par défaut, hors dispositions conventionnelles plus favorables). Exemples saillants : <strong>rendent</strong> : primes de productivité/rendement individuel, polyvalence, conditions de travail (nuit, insalubrité, froid, astreinte…), travail du dimanche/jours fériés. <strong>Ne rendent pas</strong> : ancienneté, 13e mois/fin d’année, événements familiaux, transport/panier/déplacement, primes liées aux résultats globaux/participation/intéressement, primes CE. fileciteturn1file0</p>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white border text-sm">
+        <thead class="table-header">
+          <tr>
+            <th class="py-2 px-3 text-left">Catégorie</th>
+            <th class="py-2 px-3 text-left">Exemples</th>
+            <th class="py-2 px-3 text-left">Prise en compte base HS</th>
+            <th class="py-2 px-3 text-left">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b"><td class="py-2 px-3">Exécution du travail</td><td class="py-2 px-3">Rendement / productivité <em>individuelle</em>, polyvalence, commissions</td><td class="py-2 px-3 font-semibold text-green-700">Oui</td><td class="py-2 px-3 text-gray-600">Directement liées au travail fourni. Commissions : assimilées à salaire variable.</td></tr>
+          <tr class="border-b"><td class="py-2 px-3">Conditions de travail</td><td class="py-2 px-3">Nuit, astreinte, insalubrité, froid, salissure, danger/risque, situation géographique, dimanche, jours fériés</td><td class="py-2 px-3 font-semibold text-green-700">Oui</td><td class="py-2 px-3 text-gray-600">Primes inhérentes à la nature du travail. fileciteturn1file3</td></tr>
+          <tr class="border-b"><td class="py-2 px-3">Lieu / frais</td><td class="py-2 px-3">Transport, panier, déplacement, mutation</td><td class="py-2 px-3 font-semibold text-red-700">Non</td><td class="py-2 px-3 text-gray-600">Remboursements de frais (hors élément permanent de salaire). fileciteturn1file3</td></tr>
+          <tr class="border-b"><td class="py-2 px-3">Primes générales</td><td class="py-2 px-3">13e mois, fin d’année, vacances, responsabilité</td><td class="py-2 px-3 font-semibold text-red-700">Non</td><td class="py-2 px-3 text-gray-600">Non liées à la prestation directe. fileciteturn1file0</td></tr>
+          <tr class="border-b"><td class="py-2 px-3">Situation personnelle</td><td class="py-2 px-3">Mariage, naissance, médaille du travail</td><td class="py-2 px-3 font-semibold text-red-700">Non</td><td class="py-2 px-3 text-gray-600">Évènements personnels. fileciteturn1file3</td></tr>
+          <tr class="border-b"><td class="py-2 px-3">Situation de l’entreprise</td><td class="py-2 px-3">Bilan, résultat, participation, intéressement, productivité <em>collective</em></td><td class="py-2 px-3 font-semibold text-red-700">Non</td><td class="py-2 px-3 text-gray-600">Dépendent de la performance globale. fileciteturn1file3</td></tr>
+          <tr><td class="py-2 px-3">Assiduité</td><td class="py-2 px-3">Prime d’assiduité</td><td class="py-2 px-3 font-semibold text-amber-700">Cas par cas</td><td class="py-2 px-3 text-gray-600">Jurisprudence vs administration : paramétrable dans le simulateur. fileciteturn1file0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Simulateur -->
     <section id="simulateur" class="mb-16 scroll-mt-20">
       <div class="card p-6 md:p-8">
         <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">🖥️ Simulateur Heures Sup & Dimanche (2025)</h2>
@@ -133,7 +160,7 @@
               <input id="heuresBaseMensuelles" type="number" value="151.67" class="mt-1 block w-full rounded-md p-2">
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700">Primes à inclure base HS (€)</label>
+              <label class="block text-sm font-medium text-gray-700">(Option rapide) Montant de primes à inclure (€)</label>
               <input id="primesIncluses" type="number" step="0.01" value="0" class="mt-1 block w-full rounded-md p-2">
             </div>
             <div class="lg:col-span-2">
@@ -161,8 +188,19 @@
           </div>
         </div>
 
-        <!-- 3.2 Saisie hebdomadaire -->
-        <div class="bg-gray-50 p-6 rounded-lg border mb-8">
+        <!-- 1.b FOULE des éléments de rémunération (on imagine tout, on choisit ce qui rentre) -->
+        <div class="bg-white p-6 rounded-lg border mb-8">
+          <h3 class="text-xl font-semibold mb-2 text-gray-700">1.b Éléments de rémunération – ce qui <em>rentre</em> dans la base HS</h3>
+          <p class="text-xs text-gray-600 mb-4">Coche les éléments présents et saisis leurs montants mensuels. Le simulateur n’additionne dans la base HS que ceux réputés <strong>inclus</strong> (ou « cas par cas » si tu actives l’option). Références issues de ta fiche « Rémunération pour calcul HS ». fileciteturn1file0</p>
+          <div class="flex items-center gap-3 mb-3">
+            <label class="flex items-center text-sm"><input id="inclureAssiduite" type="checkbox" class="mr-2">Inclure la prime d’assiduité (cas par cas)</label>
+          </div>
+          <div id="foulePrimes" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+          <div class="mt-4 text-sm">
+            <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full mr-2">Total des éléments <strong>INCLUS</strong> pris en base HS : <span id="totalPrimesIncluses" class="font-bold">0,00 €</span></span>
+            <span class="inline-block bg-gray-100 text-gray-800 px-3 py-1 rounded-full">Total des éléments <strong>EXCLUS</strong> (hors base HS) : <span id="totalPrimesExclues" class="font-bold">0,00 €</span></span>
+          </div>
+        </div>
           <h3 class="text-xl font-semibold mb-4 text-gray-700">2. Heures réalisées (4 semaines type)</h3>
           <div id="semaines" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
           <p class="text-xs text-gray-500 mt-4">💡 Les HS se décomptent <strong>par semaine</strong>. Le simulateur applique +25 % jusqu’à 8 HS (36e→43e h) puis +50 % au-delà, sauf si vos règles/CCN diffèrent.</p>
@@ -172,6 +210,23 @@
         <div>
           <h3 class="text-xl font-semibold mb-4 text-gray-700">3. Résultats & bulletin simplifié</h3>
           <div id="resultats" class="space-y-6"></div>
+          <div id="explications" class="space-y-4 mt-6">
+            <div class="p-4 rounded-lg border bg-blue-50 border-blue-200">
+              <h5 class="font-semibold text-blue-800 mb-2">🔎 Déduction forfaitaire patronale – explication & exemple</h5>
+              <p class="text-sm text-blue-900">Pour chaque heure supplémentaire payée, l’employeur déduit un forfait de cotisations patronales : <strong>1,50 €</strong> si l’effectif &lt; 20, <strong>0,50 €</strong> si 20–249, <strong>0</strong> si ≥ 250. Cette déduction n’impacte pas le brut/net du salarié ; elle minore le coût employeur (souvent visible en paie sous une ligne « Déduction forfaitaire HS » côté cotisations patronales).</p>
+              <p class="text-sm text-blue-900 mt-2">Exemple : 12 HS dans le mois et effectif « 20–249 » ⇒ 12 × 0,50 € = <strong>6,00 €</strong> de cotisations patronales en moins. Avec « &lt; 20 », ce serait 12 × 1,50 € = <strong>18,00 €</strong>.</p>
+              <p class="text-xs text-blue-900 mt-1">Le simulateur calcule et affiche cette déduction dans le bloc « Côté employeur ».</p>
+            </div>
+            <div class="p-4 rounded-lg border bg-white">
+              <h5 class="font-semibold text-gray-800 mb-2">🧾 Visualisation sur le bulletin</h5>
+              <ul class="list-disc list-inside text-sm text-gray-700">
+                <li><strong>Brut</strong> : Salaire de base + <em>Heures sup 25 %</em> + <em>Heures sup 50 %</em> + éventuelle <em>Prime dimanche</em> + ajustement non‑cumul.</li>
+                <li><strong>Base HS</strong> utilisée pour le taux : <em>taux horaire</em> = (Salaire de base + <span class="underline">éléments inclus</span>) / heures mensuelles. Un tableau « Détail base HS » est affiché ci‑dessous.</li>
+                <li><strong>Réduction salariale 11,31 %</strong> : ajoutée au net (dans la limite des cotisations dues) – affichée à part.</li>
+                <li><strong>Déduction forfaitaire patronale</strong> : affichée côté employeur (pas dans le net à payer).</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -186,8 +241,59 @@
       primesIncluses: document.getElementById('primesIncluses'),
       regleDimanche: document.getElementById('regleDimanche'),
       cumul: document.getElementById('cumul'),
-      reposComp: document.getElementById('reposComp')
+      reposComp: document.getElementById('reposComp'),
+      inclureAssiduite: document.getElementById('inclureAssiduite')
     };
+
+    // Modèle des éléments (foule) – label, clé, inclusParDefaut, note
+    const FOULE = [
+      {k:'commissions', label:'Commissions (vente/CA)', inclut:true, note:'Composante variable liée à l’exécution'},
+      {k:'rendement_ind', label:'Prime de rendement / productivité individuelle', inclut:true, note:'Oui (liée au travail fourni) fileciteturn1file0'},
+      {k:'polyvalence', label:'Prime de polyvalence', inclut:true, note:'Oui fileciteturn1file0'},
+      {k:'nuit', label:'Prime de nuit', inclut:true, note:'Oui (conditions de travail) fileciteturn1file3'},
+      {k:'astreinte', label:'Astreinte', inclut:true, note:'Oui fileciteturn1file3'},
+      {k:'insalubrite', label:'Insalubrité / salissure / froid / risque', inclut:true, note:'Oui (conditions de travail) fileciteturn1file3'},
+      {k:'geo', label:'Situation géographique (chantier, etc.)', inclut:true, note:'Oui (inhérent au poste) fileciteturn1file3'},
+      {k:'dimanche', label:'Prime travail du dimanche', inclut:true, note:'Oui (conditions de travail) fileciteturn1file3'},
+      {k:'jf', label:'Prime jours fériés', inclut:true, note:'Oui fileciteturn1file3'},
+      {k:'assiduite', label:'Prime d’assiduité', inclut:false, note:'Cas par cas (option en haut) fileciteturn1file0'},
+      {k:'anciennete', label:'Prime d’ancienneté', inclut:false, note:'Non fileciteturn1file0'},
+      {k:'13e', label:'13e mois / fin d’année / vacances', inclut:false, note:'Non fileciteturn1file0'},
+      {k:'responsabilite', label:'Prime de responsabilité / sécurité', inclut:false, note:'Non fileciteturn1file0'},
+      {k:'transport', label:'Transport / panier / déplacement', inclut:false, note:'Non (frais) fileciteturn1file3'},
+      {k:'evenement', label:'Événements familiaux / médaille', inclut:false, note:'Non fileciteturn1file3'},
+      {k:'participation', label:'Participation / intéressement', inclut:false, note:'Non fileciteturn1file3'},
+      {k:'resultat', label:'Primes de résultat / bilan / productivité collective', inclut:false, note:'Non (performance globale) fileciteturn1file3'}
+    ];
+
+    // Render "foule" UI
+    const fouleDiv = document.getElementById('foulePrimes');
+    const champsFoule = {};
+    FOULE.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'p-3 rounded-lg border bg-white';
+      card.innerHTML = `
+        <label class="flex items-start gap-2">
+          <input type="checkbox" data-k="${item.k}" ${item.inclut?'checked':''} class="mt-1 h-4 w-4 rounded border-gray-300 text-indigo-600">
+          <div class="w-full">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-medium text-gray-800">${item.label}</span>
+              <span class="text-xs ${item.inclut?'text-green-700':'text-red-700'}">${item.inclut?'INCLUS':'EXCLU'}</span>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">${item.note}</p>
+            <div class="mt-2">
+              <label class="text-xs text-gray-600">Montant mensuel (€)</label>
+              <input type="number" step="0.01" data-kv="${item.k}" value="0" class="mt-1 block w-full rounded-md p-2 border" />
+            </div>
+          </div>
+        </label>`;
+      fouleDiv.appendChild(card);
+      champsFoule[item.k] = {
+        chk: card.querySelector(`input[type=checkbox][data-k="${item.k}"]`),
+        val: card.querySelector(`input[type=number][data-kv="${item.k}"]`),
+        meta: item
+      };
+    });
 
     // Constantes 2025 vérifiées (SMIC utile pour repères uniquement)
     const SMIC_HORAIRE_2025 = 11.88; // Insee 2025
@@ -197,6 +303,8 @@
 
     // Construction des 4 semaines de saisie
     const semainesDiv = document.getElementById('semaines');
+    const totalPrimesInclusesSpan = document.getElementById('totalPrimesIncluses');
+    const totalPrimesExcluesSpan = document.getElementById('totalPrimesExclues');
     const semaines = [];
     for (let s = 1; s <= 4; s++) {
       const wrap = document.createElement('div');
@@ -227,14 +335,31 @@
       s.heures.addEventListener('input', recalc);
       s.dimanche.addEventListener('input', recalc);
     });
+    // Listeners foule
+    Object.values(champsFoule).forEach(({chk,val})=>{ chk.addEventListener('input', recalc); val.addEventListener('input', recalc); });
+    inputs.inclureAssiduite.addEventListener('input', recalc);
 
     function arr2(n){return Math.round(n*100)/100}
 
     function recalc(){
       const salaireBase = parseFloat(inputs.salaireBase.value||0);
       const heuresBaseMensuelles = parseFloat(inputs.heuresBaseMensuelles.value||151.67);
-      const primes = parseFloat(inputs.primesIncluses.value||0);
-      const tauxHoraireBase = (salaireBase + primes) / heuresBaseMensuelles;
+
+      // Calcul précis de la base HS à partir de la foule (avec option assiduité)
+      let totalInclus = 0, totalExclus = 0;
+      Object.values(champsFoule).forEach(({chk,val,meta})=>{
+        const m = parseFloat(val.value||0);
+        const estAssiduite = meta.k==='assiduite';
+        const doitInclure = meta.inclut || (estAssiduite && inputs.inclureAssiduite.checked);
+        if (m>0){ if (doitInclure) totalInclus += m; else totalExclus += m; }
+      });
+      // Option rapide d’ajout manuel si besoin
+      const primesRapides = parseFloat(inputs.primesIncluses.value||0);
+      totalInclus += primesRapides;
+
+      const tauxHoraireBase = (salaireBase + totalInclus) / heuresBaseMensuelles;
+      totalPrimesInclusesSpan.textContent = `${(Math.round(totalInclus*100)/100).toFixed(2)} €`;
+      totalPrimesExcluesSpan.textContent = `${(Math.round(totalExclus*100)/100).toFixed(2)} €`;
 
       const effectifVal = inputs.effectif.value;
       const regleDim = inputs.regleDimanche.value;
@@ -267,7 +392,7 @@
       });
 
       // Heures sup rémunération et majorations
-      const baseHS = tauxHoraireBase; // inclus primes sélectionnées
+      const baseHS = tauxHoraireBase; // inclut les éléments réputés inclus (foule + option rapide)
       const remunHS25 = totalHS25 * baseHS * 1.25;
       const remunHS50 = totalHS50 * baseHS * 1.50;
       const majHS = (totalHS25 * baseHS * 0.25) + (totalHS50 * baseHS * 0.50);
@@ -314,11 +439,11 @@
       const blocSynthese = `
         <div class="p-4 rounded-lg border bg-gray-100">
           <h4 class="font-bold text-lg text-indigo-700 mb-4">Synthèse mois (pédagogique)</h4>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
               <table class="min-w-full bg-white border text-sm">
                 <tbody>
-                  <tr class="border-b"><td class="py-1 px-2">Taux horaire de base (avec primes incluses)</td><td class="text-right py-1 px-2">${arr2(baseHS).toFixed(2)} €</td></tr>
+                  <tr class="border-b"><td class="py-1 px-2">Taux horaire de base (avec éléments INCLUS)</td><td class="text-right py-1 px-2">${arr2(baseHS).toFixed(2)} €</td></tr>
                   <tr class="border-b"><td class="py-1 px-2">HS à 25 %</td><td class="text-right py-1 px-2">${totalHS25} h</td></tr>
                   <tr class="border-b"><td class="py-1 px-2">HS à 50 %</td><td class="text-right py-1 px-2">${totalHS50} h</td></tr>
                   <tr class="border-b"><td class="py-1 px-2">Heures travaillées le dimanche</td><td class="text-right py-1 px-2">${arr2(totalDimHeures)} h</td></tr>
@@ -330,8 +455,20 @@
                 <tbody>
                   <tr class="border-b"><td class="py-1 px-2">Rémunération HS (base + maj.)</td><td class="text-right py-1 px-2">${arr2(brutHS).toFixed(2)} €</td></tr>
                   <tr class="border-b"><td class="py-1 px-2">Prime dimanche</td><td class="text-right py-1 px-2">${arr2(brutDimanche).toFixed(2)} €</td></tr>
-                  ${!cumul && (inputs.regleDimanche.value === '+100' || inputs.regleDimanche.value === 'noncumul90') ? `<tr class="border-b"><td class="py-1 px-2">Ajustement non-cumul (plus favorable)</td><td class="text-right py-1 px-2">${arr2(ajustementNonCumul).toFixed(2)} €</td></tr>`:''}
+                  ${!cumul && (inputs.regleDimanche.value === '+100' || inputs.regleDimanche.value === 'noncumul90') ? `<tr class=\"border-b\"><td class=\"py-1 px-2\">Ajustement non-cumul (plus favorable)</td><td class=\"text-right py-1 px-2\">${arr2(ajustementNonCumul).toFixed(2)} €</td></tr>`:''}
                   <tr class="border-b font-semibold"><td class="py-1 px-2">Brut total</td><td class="text-right py-1 px-2">${arr2(brutTotal).toFixed(2)} €</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <table class="min-w-full bg-white border text-sm">
+                <thead class="table-header"><tr><th class="py-2 px-2 text-left">Détail base HS</th><th class="py-2 px-2 text-right">€</th></tr></thead>
+                <tbody>
+                  <tr class="border-b"><td class="py-1 px-2">Salaire de base</td><td class="text-right py-1 px-2">${arr2(salaireBrutBase).toFixed(2)}</td></tr>
+                  <tr class="border-b"><td class="py-1 px-2">Éléments INCLUS (foule)</td><td class="text-right py-1 px-2">${(Math.round((totalInclus-primesRapides)*100)/100).toFixed(2)}</td></tr>
+                  <tr class="border-b"><td class="py-1 px-2">Ajout manuel (option rapide)</td><td class="text-right py-1 px-2">${arr2(primesRapides).toFixed(2)}</td></tr>
+                  <tr class="bg-gray-200 font-bold"><td class="py-1 px-2">Total pris en base HS</td><td class="text-right py-1 px-2">${(Math.round((salaireBrutBase+totalInclus)*100)/100).toFixed(2)}</td></tr>
+                  <tr class="text-xs"><td class="py-1 px-2 text-gray-500" colspan="2">Éléments EXCLUS (frais, 13e mois, participation, etc.) : ${arr2(totalExclus).toFixed(2)} € (hors base HS).</td></tr>
                 </tbody>
               </table>
             </div>
@@ -347,7 +484,7 @@
               <tr class="border-b"><td class="py-1 px-2">Heures sup 25 %</td><td class="text-right py-1 px-2">${arr2(totalHS25*baseHS*1.25).toFixed(2)} €</td></tr>
               <tr class="border-b"><td class="py-1 px-2">Heures sup 50 %</td><td class="text-right py-1 px-2">${arr2(totalHS50*baseHS*1.50).toFixed(2)} €</td></tr>
               <tr class="border-b"><td class="py-1 px-2">Prime dimanche</td><td class="text-right py-1 px-2">${arr2(brutDimanche).toFixed(2)} €</td></tr>
-              ${!cumul && (inputs.regleDimanche.value === '+100' || inputs.regleDimanche.value === 'noncumul90') ? `<tr class="border-b"><td class="py-1 px-2">Ajustement non-cumul</td><td class="text-right py-1 px-2">${arr2(ajustementNonCumul).toFixed(2)} €</td></tr>`:''}
+              ${!cumul && (inputs.regleDimanche.value === '+100' || inputs.regleDimanche.value === 'noncumul90') ? `<tr class=\"border-b\"><td class=\"py-1 px-2\">Ajustement non-cumul</td><td class=\"text-right py-1 px-2\">${arr2(ajustementNonCumul).toFixed(2)} €</td></tr>`:''}
               <tr class="bg-gray-200 font-bold"><td class="py-1 px-2">Brut soumis</td><td class="text-right py-1 px-2">${arr2(brutTotal).toFixed(2)} €</td></tr>
               <tr><td class="py-1 px-2 text-xs italic text-gray-500" colspan="2">… Cotisations salariales (≈22 %) …</td></tr>
               <tr class="border-t"><td class="py-1 px-2">Réduction salariale HS (max 11,31 %)</td><td class="text-right py-1 px-2">+${arr2(reducSalariale).toFixed(2)} €</td></tr>
